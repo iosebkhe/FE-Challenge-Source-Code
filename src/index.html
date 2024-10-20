@@ -36,13 +36,18 @@
         </div>
 
         <form>
-          <div class="input-group">
-            <input id="email-search-input" class="form-control" type="text" name="email"
-              placeholder="Enter an Email Address" />
-            <p class="error-msg">Please enter a valid email address</p>
+          <!-- 
+          Added d-md-flex class to ensure proper alignment of input and button in larger viewports 
+          -->
+          <div class="d-md-flex">
+            <div class="input-group">
+              <input id="email-search-input" class="form-control" type="text" name="email"
+                placeholder="Enter an Email Address" />
+              <p class="error-msg">Please enter a valid email address</p>
+            </div>
             <!-- 
-          Removed Bootstrap .btn class to apply custom styles that align with design specs. 
-          This allows for better control over button states (hover, active) as per QA feedback. 
+            Removed Bootstrap .btn class to apply custom styles that align with design specs. 
+            This allows for better control over button states (hover, active) as per QA feedback. 
            -->
             <button class="js-btn-search btn-form-submit text-uppercase" type="submit" data-form="search">Go!</button>
           </div>
@@ -183,14 +188,20 @@
           <h1 class="mb-3">Can't Find The Right Person?</h1>
           <h2 class="mb-4 mb-md-5"><strong>Try Again</strong> - Make a new search</h2>
         </div>
+
         <form>
-          <div class="input-group">
-            <input id="email-search-again-input" class="form-control" type="text" name="email"
-              placeholder="Enter an Email Address" />
-            <p class="error-msg">Please enter a valid email address</p>
+          <!-- 
+          Added d-md-flex class to ensure proper alignment of input and button in larger viewports 
+          -->
+          <div class="d-md-flex">
+            <div class="input-group">
+              <input id="email-search-again-input" class="form-control" type="text" name="email"
+                placeholder="Enter an Email Address" />
+              <p class="error-msg">Please enter a valid email address</p>
+            </div>
             <!-- 
-          Removed Bootstrap .btn class to apply custom styles that align with design specs. 
-          This allows for better control over button states (hover, active) as per QA feedback. 
+            Removed Bootstrap .btn class to apply custom styles that align with design specs. 
+            This allows for better control over button states (hover, active) as per QA feedback. 
            -->
             <button class="js-btn-search btn-form-submit text-uppercase" type="submit"
               data-form="search-again">Go!</button>
