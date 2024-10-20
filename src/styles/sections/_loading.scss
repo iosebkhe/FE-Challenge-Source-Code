@@ -1,0 +1,40 @@
+.loading {
+  background-color: #F8F8F8;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &-spinner {
+    animation: spinner 2000ms infinite;
+
+    @media (min-width: 768px) {
+      width: 154px;
+      height: 154px;
+    }
+  }
+
+  &-text {
+    font-size: 18px;
+    color: #004A80;
+    font-weight: 700;
+    margin-top: 27px;
+
+    @media (min-width: 768px) {
+      font-size: 24px;
+    }
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}

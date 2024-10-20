@@ -24,170 +24,191 @@
     </div>
   </nav>
 
-  <!-- Main Form -->
-  <section id="main-form" class="above-the-fold">
-    <div class="container">
-      <div class="headline text-white text-center mb-4 mb-md-5">
-        <h1 class="mb-3">Start Your Search!</h1>
-        <h2>Look up for people's name, photos and online profiles with their email address or phone number. See what you
-          find!</h2>
-      </div>
+  <main id="main-content">
+    <!-- Main Form -->
+    <section id="main-form" class="above-the-fold">
+      <div class="container">
+        <div class="headline text-white text-center mb-4 mb-md-5">
+          <h1 class="mb-3">Start Your Search!</h1>
+          <h2>Look up for people's name, photos and online profiles with their email address or phone number. See what
+            you
+            find!</h2>
+        </div>
 
-      <form>
-        <div class="input-group">
-          <input id="email-search-input" class="form-control" type="text" name="email"
-            placeholder="Enter an Email Address" />
-          <p class="error-msg">Please enter a valid email address</p>
-          <!-- 
+        <form>
+          <div class="input-group">
+            <input id="email-search-input" class="form-control" type="text" name="email"
+              placeholder="Enter an Email Address" />
+            <p class="error-msg">Please enter a valid email address</p>
+            <!-- 
           Removed Bootstrap .btn class to apply custom styles that align with design specs. 
           This allows for better control over button states (hover, active) as per QA feedback. 
            -->
-          <button class="js-btn-search btn-form-submit text-uppercase" type="submit" data-form="search">Go!</button>
-        </div>
-        <div class="d-flex justify-content-start justify-content-md-end align-items-center mt-4">
-          <img src="assets/lock.svg" alt="lock">
-          <p class="form-subtext">People in the search won't be notified.</p>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section id="features" class="features">
-    <div class="container">
-      <div class="headline">
-        <h1 class="text-primary text-center mb-2 mb-md-4">Here's How It Works</h1>
-        <h2 class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquip ex ea commodo consequat.</h2>
+            <button class="js-btn-search btn-form-submit text-uppercase" type="submit" data-form="search">Go!</button>
+          </div>
+          <div class="d-flex justify-content-start justify-content-md-end align-items-center mt-4">
+            <img src="assets/lock.svg" alt="lock">
+            <p class="form-subtext">People in the search won't be notified.</p>
+          </div>
+        </form>
       </div>
-      <div class="row">
-        <!-- Column 1: Features 1, 2, and 3 -->
-        <div class="col-md-6">
-          <!-- Feature 1: Positioned first in the order -->
-          <div class="list-item d-flex align-items-lg-center">
-            <div class="list-circle">1</div>
-            <div class="list-text">
-              <h3>Lorem Ipsum</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
-            </div>
-          </div>
-          <!-- Feature 1: Positioned second in the order -->
-          <div class="list-item d-flex align-items-lg-center">
-            <div class="list-circle">2</div>
-            <div class="list-text">
-              <h3>Lorem Ipsum</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
-            </div>
-          </div>
-          <!-- Feature 3: Positioned third in the order -->
-          <div class="list-item d-flex align-items-lg-center mb-md-0">
-            <div class="list-circle">3</div>
-            <div class="list-text">
-              <h3>Lorem Ipsum</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
-            </div>
-          </div>
-        </div>
+    </section>
 
-        <!-- Column 2: Features 4, 5, and 6 -->
-        <div class="col-md-6">
-          <!-- Feature 4: Positioned fourth in the order -->
-          <div class="list-item d-flex align-items-lg-center">
-            <div class="list-circle">4</div>
-            <div class="list-text">
-              <h3>Lorem Ipsum</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
-            </div>
-          </div>
-          <!-- Feature 5: Positioned fifth in the order -->
-          <div class="list-item d-flex align-items-lg-center">
-            <div class="list-circle">5</div>
-            <div class="list-text">
-              <h3>Lorem Ipsum</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
-            </div>
-          </div>
-          <!-- Feature 6: Positioned sixth in the order -->
-          <div class="list-item d-flex align-items-lg-center mb-md-0">
-            <div class="list-circle">6</div>
-            <div class="list-text">
-              <h3>Lorem Ipsum</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
-            </div>
-          </div>
+    <!-- Features -->
+    <section id="features" class="features">
+      <div class="container">
+        <div class="headline">
+          <h1 class="text-primary text-center mb-2 mb-md-4">Here's How It Works</h1>
+          <h2 class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.</h2>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Results -->
-  <section id="results" class="result d-none">
-    <div class="container">
-      <div class="headline text-center">
-        <h1 id="result-count" class="text-primary mb-3"></h1>
-        <h2 id="result-subtext" class="result-desc"></h2>
-      </div>
-      <div class="js-result-wrap d-none">
-        <div class="result-card d-flex">
-          <div class="result-avatar">
-            <img src="assets/person.svg" alt="result image">
-          </div>
-          <div class="result-content w-100">
-            <h4 id="user-name" class="name"></h4>
-            <p id="user-description" class="user-description"></p>
-            <div class="row">
-              <div class="col-md-6">
-                <h5>Address</h5>
-                <p id="address" class="address"></p>
-              </div>
-              <div class="col-md-6">
-                <h5>Phone Numbers</h5>
-                <div class="phone-num"></div>
+        <div class="row">
+          <!-- Column 1: Features 1, 2, and 3 -->
+          <div class="col-md-6">
+            <!-- Feature 1: Positioned first in the order -->
+            <div class="list-item d-flex align-items-lg-center">
+              <div class="list-circle">1</div>
+              <div class="list-text">
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna aliqua.</p>
               </div>
             </div>
-            <div class="row mt-3">
-              <div class="col-md-6">
-                <h5>Email</h5>
-                <p id="email" class="email"></p>
+            <!-- Feature 1: Positioned second in the order -->
+            <div class="list-item d-flex align-items-lg-center">
+              <div class="list-circle">2</div>
+              <div class="list-text">
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna aliqua.</p>
               </div>
-              <div class="col-md-6">
-                <h5>Relatives</h5>
-                <div class="relatives"></div>
+            </div>
+            <!-- Feature 3: Positioned third in the order -->
+            <div class="list-item d-flex align-items-lg-center mb-md-0">
+              <div class="list-circle">3</div>
+              <div class="list-text">
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna aliqua.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Features 4, 5, and 6 -->
+          <div class="col-md-6">
+            <!-- Feature 4: Positioned fourth in the order -->
+            <div class="list-item d-flex align-items-lg-center">
+              <div class="list-circle">4</div>
+              <div class="list-text">
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna aliqua.</p>
+              </div>
+            </div>
+            <!-- Feature 5: Positioned fifth in the order -->
+            <div class="list-item d-flex align-items-lg-center">
+              <div class="list-circle">5</div>
+              <div class="list-text">
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna aliqua.</p>
+              </div>
+            </div>
+            <!-- Feature 6: Positioned sixth in the order -->
+            <div class="list-item d-flex align-items-lg-center mb-md-0">
+              <div class="list-circle">6</div>
+              <div class="list-text">
+                <h3>Lorem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna aliqua.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Search Again Form -->
-  <section id="search-again" class="search-again d-none">
-    <div class="container">
-      <div class="headline text-white text-center">
-        <h1 class="mb-3">Can't Find The Right Person?</h1>
-        <h2 class="mb-4 mb-md-5"><strong>Try Again</strong> - Make a new search</h2>
+    <!-- Results -->
+    <section id="results" class="result d-none">
+      <div class="container">
+        <div class="headline text-center">
+          <h1 id="result-count" class="text-primary mb-3"></h1>
+          <h2 id="result-subtext" class="result-desc"></h2>
+        </div>
+        <div class="js-result-wrap d-none">
+          <div class="result-card d-flex">
+            <div class="result-avatar">
+              <img src="assets/person.svg" alt="result image">
+            </div>
+            <div class="result-content w-100">
+              <h4 id="user-name" class="name"></h4>
+              <p id="user-description" class="user-description"></p>
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>Address</h5>
+                  <p id="address" class="address"></p>
+                </div>
+                <div class="col-md-6">
+                  <h5>Phone Numbers</h5>
+                  <div class="phone-num"></div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <h5>Email</h5>
+                  <p id="email" class="email"></p>
+                </div>
+                <div class="col-md-6">
+                  <h5>Relatives</h5>
+                  <div class="relatives"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <form>
-        <div class="input-group">
-          <input id="email-search-again-input" class="form-control" type="text" name="email"
-            placeholder="Enter an Email Address" />
-          <p class="error-msg">Please enter a valid email address</p>
-          <!-- 
+    </section>
+
+    <!-- Search Again Form -->
+    <section id="search-again" class="search-again d-none">
+      <div class="container">
+        <div class="headline text-white text-center">
+          <h1 class="mb-3">Can't Find The Right Person?</h1>
+          <h2 class="mb-4 mb-md-5"><strong>Try Again</strong> - Make a new search</h2>
+        </div>
+        <form>
+          <div class="input-group">
+            <input id="email-search-again-input" class="form-control" type="text" name="email"
+              placeholder="Enter an Email Address" />
+            <p class="error-msg">Please enter a valid email address</p>
+            <!-- 
           Removed Bootstrap .btn class to apply custom styles that align with design specs. 
           This allows for better control over button states (hover, active) as per QA feedback. 
            -->
-          <button class="js-btn-search btn-form-submit text-uppercase" type="submit"
-            data-form="search-again">Go!</button>
-        </div>
-      </form>
+            <button class="js-btn-search btn-form-submit text-uppercase" type="submit"
+              data-form="search-again">Go!</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Loading Section -->
+  <section id="loading" class="loading d-none">
+    <div class="container">
+      <!-- Loading spinner image -->
+      <img class="loading-spinner" width="124" height="124" src="./assets/loading_spinner.svg" alt="loading-spinner">
+
+      <!-- Loading text message displayed while data is being fetched -->
+      <p class="loading-text">Please wait a moment...</p>
+
     </div>
   </section>
 
