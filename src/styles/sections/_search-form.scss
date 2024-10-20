@@ -1,4 +1,6 @@
 .btn-form-submit {
+  border: 1px solid transparent;
+  padding: 6px 0;
   font-size: 24px;
   font-weight: bold;
   color: #004A80;
@@ -16,14 +18,27 @@
     margin: 12px 0 0 0;
   }
 
-  &:hover {
+  // Interaction states
+  &:hover,
+  &:active {
+    // Remove gradient on hover/active
     background-image: none;
-    background-color: #6c757d;
+    color: #004A80;
+  }
+
+  &:hover {
+    background-color: #F2DA56;
+  }
+
+  &:active,
+  &:focus {
+    // Change background on active/focus
+    background-color: #F6BC25;
   }
 }
 
 .input-group {
-  > .form-control {
+  >.form-control {
     height: 70px;
     background: #FFF;
     box-shadow: inset 0 -1px 4px 0 rgba(0, 0, 0, 0.20);
@@ -44,7 +59,7 @@
     }
   }
 
-  &.error > .form-control {
+  &.error>.form-control {
     border: 3px solid #DC0015;
     border-radius: 3px 3px 0 0 !important;
   }
