@@ -1,4 +1,17 @@
+.form-wrapper {
+  @media (min-width:768px) {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.form-content {
+  flex: 1;
+}
+
+
 .btn-form-submit {
+  flex: 1;
   border: 1px solid transparent;
   padding: 6px 0;
   font-size: 24px;
@@ -12,10 +25,12 @@
   -webkit-appearance: none;
   max-width: 180px;
   width: 100%;
+  height: 70px;
   margin-left: 20px;
 
   /* Adjust styles for mobile view */
   @media (max-width: 767px) {
+    height: 50px;
     max-width: 100%;
     margin: 12px 0 0 0;
   }

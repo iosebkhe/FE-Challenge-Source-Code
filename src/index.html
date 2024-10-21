@@ -37,18 +37,30 @@
 
         <form>
           <!-- 
-          Added d-md-flex class to ensure proper alignment of input and button in larger viewports 
-          -->
-          <div class="d-md-flex">
-            <div class="input-group">
-              <input id="email-search-input" class="form-control" type="text" name="email"
-                placeholder="Enter an Email Address" />
-              <p class="error-msg">Please enter a valid email address</p>
+          Added d-md-flex class to ensure proper alignment of input and button in larger viewports  -->
+          <div class="form-wrapper">
+            <div class="form-content">
+              <div class="tabs">
+                <p class="tabs-search-type">Type Of Search:</p>
+                <button class="tab-email tab tab-active">Email Address</button>
+                <button class="tab-phone tab">Phone Number</button>
+              </div>
+
+              <div class="email-input input-group">
+                <input id="email-search-input" class="form-control" type="text" name="email"
+                  placeholder="Enter an Email Address" />
+                <p class="error-msg">Please enter a valid email address</p>
+              </div>
+
+              <div class="phone-input input-group d-none">
+                <input id="phone-search-input" class="form-control" type="text" name="phone"
+                  placeholder="Enter A Phone Number" />
+                <p class="error-msg">Please enter a valid phone number</p>
+              </div>
             </div>
             <!-- 
             Removed Bootstrap .btn class to apply custom styles that align with design specs. 
-            This allows for better control over button states (hover, active) as per QA feedback. 
-           -->
+            This allows for better control over button states (hover, active) as per QA feedback.  -->
             <button class="js-btn-search btn-form-submit text-uppercase" type="submit" data-form="search">Go!</button>
           </div>
           <div class="d-flex justify-content-start justify-content-md-end align-items-center mt-4">
@@ -56,6 +68,7 @@
             <p class="form-subtext">People in the search won't be notified.</p>
           </div>
         </form>
+
       </div>
     </section>
 
@@ -193,12 +206,28 @@
           <!-- 
           Added d-md-flex class to ensure proper alignment of input and button in larger viewports 
           -->
-          <div class="d-md-flex">
-            <div class="input-group">
-              <input id="email-search-again-input" class="form-control" type="text" name="email"
-                placeholder="Enter an Email Address" />
-              <p class="error-msg">Please enter a valid email address</p>
+          <div class="form-wrapper">
+            <div class="form-content">
+              <div class="tabs">
+                <p class="tabs-search-type">Type Of Search</p>
+                <button class="tab-email tab tab-active">Email Address</button>
+                <button class="tab-phone tab">Phone Number</button>
+              </div>
+
+              <div class="email-input input-group">
+                <input id="email-search-again-input" class="form-control" type="text" name="email"
+                  placeholder="Enter an Email Address" />
+                <p class="error-msg">Please enter a valid email address</p>
+              </div>
+
+              <div class="phone-input input-group d-none">
+                <input id="phone-search-again-input" class="form-control" type="text" name="phone"
+                  placeholder="Enter A Phone Number" />
+                <p class="error-msg">Please enter a valid phone number</p>
+              </div>
             </div>
+
+
             <!-- 
             Removed Bootstrap .btn class to apply custom styles that align with design specs. 
             This allows for better control over button states (hover, active) as per QA feedback. 
