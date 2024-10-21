@@ -18,7 +18,6 @@ function showResultsSection() {
   const resultsSection = document.getElementById('results');
 
   populateResultsData();
-
   mainFormSection.classList.add('d-none');
   featuresSection.classList.add('d-none');
   searchAgainSection.classList.remove('d-none');
@@ -37,8 +36,7 @@ function validateEmail(email) {
 // Validates phone number format (10 digits).
 function validatePhone(phone) {
   // Checks for 10 digits only
-  const phoneRegEx = /^\d{10}$/;
-  return phoneRegEx.test(phone);
+  return /^\d{10}$/.test(phone);
 }
 
 // Helper function to show an error on the input field.
@@ -75,7 +73,7 @@ function initInputValidation() {
         const isValid = inputType === 'email' ? validateEmail(value) : validatePhone(value);
 
         if (isValid) {
-          // / Trigger search if valid
+          // Trigger search if valid
           handleSearch(inputType, value);
         } else {
           // Show error if invalid
@@ -104,9 +102,7 @@ function handleSearch(inputType, value) {
     });
 }
 
-/**
- * Initializes the search button functionality.
- */
+// Initializes the search button functionality.
 function initSearchButton() {
   document.querySelectorAll('.js-btn-search').forEach(function (button) {
     button.addEventListener('click', function (e) {
@@ -126,7 +122,7 @@ function initSearchButton() {
       let isValid = false;
 
       // Check for empty inputs
-      if (!email) {
+      if (!email && !phone) {
         showError(emailInput);
         showError(phoneInput);
       } else if (email && validateEmail(email)) {
