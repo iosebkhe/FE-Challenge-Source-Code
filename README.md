@@ -35,4 +35,4 @@ To run this project in your local environment, ensure you have `node` and `npm` 
 This will get the local server running and you should be able to see the page on your localhost
 
 ## Live Demo
-- Live Site URL: [Click here](#)
+- Live Site URL: [Click here](https://github.com/iosebkhe/FE-Challenge-Source-Code)
