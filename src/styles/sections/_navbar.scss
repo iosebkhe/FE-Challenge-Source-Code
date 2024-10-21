@@ -1,4 +1,10 @@
 .navbar {
-  background: #004A80;
-  padding: 20px 16px;
+  background: $color-blue;
+  padding: 2rem 1.6rem;
+
+  &-user {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+  }
 }

@@ -1,5 +1,5 @@
 .loading {
-  background-color: #F8F8F8;
+  background-color: $color-gray-4;
   height: 100vh;
 
   display: flex;
@@ -10,20 +10,20 @@
   &-spinner {
     animation: spinner 2000ms infinite;
 
-    @media (min-width: 768px) {
-      width: 154px;
-      height: 154px;
+    @include respond-to(medium) {
+      width: 15.4rem;
+      height: 15.4rem;
     }
   }
 
   &-text {
-    font-size: 18px;
-    color: #004A80;
-    font-weight: 700;
-    margin-top: 27px;
+    font-size: $font-size-18;
+    color: $color-blue;
+    font-weight: $font-weight-bold;
+    margin-top: 2.7rem;
 
-    @media (min-width: 768px) {
-      font-size: 24px;
+    @include respond-to(medium) {
+      font-size: $font-size-24;
     }
   }
 }

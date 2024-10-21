@@ -1,54 +1,58 @@
 .result {
-  background: #F8F8F8;
-  min-height: 455px;
+  background: $color-gray-4;
+  min-height: 30.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
+  .result-avatar {
+    display: none;
+  }
+
   .result-card {
-    max-width: 980px;
-    background: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-    border-radius: 30px;
-    padding: 40px;
-    margin: 40px auto;
+    max-width: 98rem;
+    background: $color-white;
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.50);
+    border-radius: $border-radius-extra-large;
+    padding: 4rem;
+    margin: 4rem auto;
 
     .result-avatar {
-      border-radius: 50%;
-      width: 90px;
-      height: 90px;
-      line-height: 86px;
-      background: #004A80;
+      border-radius: $border-radius-circle;
+      width: 6.3rem;
+      height: 6.3rem;
+      line-height: $line-height-58;
+      background: $color-blue;
       text-align: center;
-      flex: 0 0 90px;
-      margin-right: 20px;
-
-      @media (max-width: 991px) {
-        width: 63px;
-        height: 63px;
-        line-height: 58px;
-        flex: 0 0 63px;
-      }
+      flex: 0 0 6.3rem;
+      margin-right: 2rem;
 
       img {
-        width: 28px;
+        width: 2.8rem;
       }
     }
 
     .result-desc {
-      color: #4A4A4A;
+      color: $color-gray-3;
     }
   }
 
-  @media (max-width: 991px) {
-    min-height: 512px;
-  }
-
-  @media (max-width: 767px) {
-    min-height: 306px;
+  @include respond-to(medium) {
+    min-height: 51.2rem;
 
     .result-avatar {
-      display: none;
+      display: block;
+    }
+  }
+
+  @include respond-to(large) {
+    min-height: 45.5rem;
+
+    .result-avatar {
+      width: 9rem;
+      height: 9rem;
+      line-height: $line-height-86;
+      flex: 0 0 9rem;
     }
   }
 }

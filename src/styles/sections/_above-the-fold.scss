@@ -1,9 +1,14 @@
 .above-the-fold {
-  background: #004A80;
-  padding-top: 24px;
+  background: $color-blue;
+  padding-top: 2.4rem;
 }
 
 .above-the-fold .headline {
-  max-width: 780px;
+  max-width: 78rem;
   margin: 0 auto;
+  margin-bottom: 2.8rem;
+
+  @include respond-to(medium) {
+    margin-bottom: 3.8rem;
+  }
 }

@@ -33,7 +33,7 @@ function populateResultsData() {
           document.querySelector('.phone-num').innerHTML +=
             "<a href='tel:" +
             phone +
-            "' style='display: block;color: #004A80;'>" +
+            "' style='display: block;color: #004A80; text-decoration:none;'>" +
             formatted_phone +
             '</a>';
         }

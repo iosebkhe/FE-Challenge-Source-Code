@@ -1,63 +1,81 @@
+@import './variables';
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: $font-family;
   color: #000;
-  font-size: 18px;
+  font-size: $font-size-18;
 }
 
 h1 {
-  font-size: 52px;
+  font-size: $font-size-32;
   font-weight: bold;
 
-  @media (max-width: 991px) {
-    font-size: 48px;
+  @include respond-to(medium) {
+    font-size: $font-size-48;
   }
 
-  @media (max-width: 767px) {
-    font-size: 32px;
+  @include respond-to(large) {
+    font-size: $font-size-52;
   }
 }
+
 
 h2 {
-  font-size: 24px;
-  font-weight: normal;
+  font-size: $font-size-16;
+  /* Default for mobile */
+  font-weight: $font-weight-normal;
+  line-height: $line-height-20;
 
-  @media (max-width: 991px) {
-    font-size: 20px;
+  @include respond-to(medium) {
+    font-size: $font-size-20;
+    line-height: normal;
+    /* Tablet and up */
   }
 
-  @media (max-width: 767px) {
-    font-size: 16px;
+  @include respond-to(large) {
+    font-size: $font-size-24;
+    /* Desktop and up */
   }
 }
 
-h3, h5 {
-  font-size: 22px;
-  font-weight: bold;
-  color: #004A80;
+h3,
+h5 {
+  font-size: $font-size-20;
+  font-weight: $font-weight-bold;
+  color: $color-blue;
 
-  @media (max-width: 991px) {
-    font-size: 20px;
+  @include respond-to(medium) {
+    font-size: $font-size-22;
   }
 }
 
 h4 {
-  font-size: 32px;
+  font-size: $font-size-20;
   font-weight: bold;
-  color: #004A80;
+  color: $color-blue;
 
-  @media (max-width: 991px) {
-    font-size: 20px;
+  @include respond-to(medium) {
+    font-size: $font-size-32;
   }
 }
 
 section {
-  padding: 40px 0 52px;
+  padding: 4rem 0 5.2rem;
 }
 
 .text-primary {
-  color: #004A80 !important;
+  color: $color-blue !important;
 }
 
 .text-secondary {
-  color: #4A4A4A !important;
+  color: $color-gray-3 !important;
+}
+
+.container {
+  max-width: 98rem;
+  padding: 0 1.6rem;
 }

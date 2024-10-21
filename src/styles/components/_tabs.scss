@@ -1,23 +1,24 @@
 .tabs {
   display: flex;
-  gap: 7px;
-  margin-bottom: 21px;
+  gap: 0.7rem; // 7px
+  margin-bottom: 2.1rem; // 21px
   align-items: center;
 
-  @media (min-width:768px) {
-    gap: 20px;
+  // Use media query mixin for larger screens
+  @include respond-to(medium) {
+    gap: 2rem;
   }
 
   &-search-type {
     display: none;
 
-    @media (min-width:768px) {
+    @include respond-to(medium) {
       display: block;
       margin-bottom: 0;
-      color: #ffffff;
-      font-size: 16px;
+      color: $color-white;
+      font-size: $font-size-16;
       text-transform: uppercase;
-      margin-right: 4px;
+      margin-right: 0.4rem;
     }
   }
 
@@ -25,38 +26,35 @@
     background-color: transparent;
     outline: none;
     flex: 1;
-    font-size: 14px;
-    color: #F6BC25;
-    font-weight: 700;
-    border: 3px solid #F6BC25;
-    border-radius: 6px;
-    padding-top: 7px;
-    padding-bottom: 5px;
-    line-height: 17px;
+    font-size: $font-size-14;
+    color: $color-yellow-dark;
+    font-weight: $font-weight-bold;
+    border: 0.3rem solid $color-yellow-dark;
+    border-radius: $border-radius-large;
+    padding-top: 0.7rem;
+    padding-bottom: 0.5rem;
+    line-height: $line-height-17;
     text-transform: uppercase;
 
     &-active {
       position: relative;
-      color: #004A80;
-      background-color: #F6BC25;
+      color: $color-blue;
+      background-color: $color-yellow-dark;
 
       &::after {
         content: "";
         position: absolute;
         bottom: -50%;
         left: 50%;
-        transform: rotate(45deg) translate(-5px, -5px);
-        width: 10px;
-        height: 10px;
-        background-color: #F6BC25;
-
+        transform: rotate(45deg) translate(-0.5rem, -0.5rem); // Adjusted for rem
+        width: 1rem;
+        height: 1rem;
+        background-color: $color-yellow-dark;
       }
     }
 
-    @media (min-width:768px) {
-      max-width: 150px;
+    @include respond-to(medium) {
+      max-width: 15rem; // 150px
     }
   }
-
-
 }
