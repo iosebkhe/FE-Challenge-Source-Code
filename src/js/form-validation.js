@@ -1,19 +1,15 @@
 import { populateResultsData } from './results';
 
+// Toggles the loading section visibility.
 function toggleLoadingSection(show) {
   const loadingSection = document.getElementById('loading');
   const mainContent = document.getElementById('main-content');
-
-  if (show) {
-    // Show the loading section and hide the main content
-    loadingSection.classList.remove('d-none');
-    mainContent.classList.add('d-none');
-  } else {
-    // Hide the loading section and show the main content
-    loadingSection.classList.add('d-none');
-    mainContent.classList.remove('d-none');
-  }
+  loadingSection.classList.toggle('d-none', !show);
+  mainContent.classList.toggle('d-none', show);
 }
+
+
+//  Displays the results section and populates data.
 
 function showResultsSection() {
   const mainFormSection = document.getElementById('main-form');
@@ -32,75 +28,57 @@ function showResultsSection() {
   toggleLoadingSection(false);
 }
 
-// Email validation function
+// Validates email format using a regular expression.
 function validateEmail(email) {
   const emailRegEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   return emailRegEx.test(email);
 }
 
-// Phone validation function
+// Validates phone number format (10 digits).
 function validatePhone(phone) {
-  // Phone number validation (10 digits only)
+  // Checks for 10 digits only
   const phoneRegEx = /^\d{10}$/;
   return phoneRegEx.test(phone);
 }
 
-// Helper functions for showing and clearing errors
+// Helper function to show an error on the input field.
 function showError(input) {
   input.parentNode.classList.add('error');
 }
 
+// Helper function to clear the error from the input field.
 function clearError(input) {
   input.parentNode.classList.remove('error');
 }
 
+// Initializes input validation by adding event listeners.
 function initInputValidation() {
-  document.querySelectorAll('input[type="text"]').forEach(function (input) {
+  document.querySelectorAll('input[type="email"], input[type="tel"]').forEach(function (input) {
     input.addEventListener('keypress', function (event) {
       const inputType = input.getAttribute('name');
-      let isValid = false;
+      const keycode = event.keyCode || event.which;
 
-      // Clear error before validation
-      clearError(input);
-
-      if (inputType === 'email') {
-        const email = input.value.toLowerCase();
-        isValid = validateEmail(email);
-      } else if (inputType === 'phone') {
-        const phone = input.value;
-        isValid = validatePhone(phone);
-      }
-
-      const keycode = event.keyCode ? event.keyCode : event.which;
-      if (keycode == '13') {
+      if (keycode === 13) { // Enter key
         event.preventDefault();
-        localStorage.clear();
+        const value = input.value.trim();
+
+        // Clear error before validation
+        clearError(input);
+
+        // Check for empty input
+        if (!value) {
+          showError(input); // Show error if input is empty
+          return;
+        }
+
+        // Validate input based on type
+        const isValid = inputType === 'email' ? validateEmail(value) : validatePhone(value);
 
         if (isValid) {
-          // Show loading section and hide main content
-          toggleLoadingSection(true);
-
-          const proxyurl = '';
-          const url = inputType === 'email'
-            ? 'https://ltvdataapi.devltv.co/api/v1/records?email=' + input.value
-            : 'https://ltvdataapi.devltv.co/api/v1/records?phone=' + input.value;
-
-          fetch(proxyurl + url)
-            .then(function (response) {
-              return response.text();
-            })
-            .then(function (contents) {
-              localStorage.setItem('userObject', contents);
-              showResultsSection();
-            })
-            .catch(function (e) {
-              console.log(e);
-            }).finally(function () {
-              // Hide loading section and show main content
-              toggleLoadingSection(false);
-            });
+          // / Trigger search if valid
+          handleSearch(inputType, value);
         } else {
-          // Show error for invalid input
+          // Show error if invalid
           showError(input);
         }
       }
@@ -108,25 +86,47 @@ function initInputValidation() {
   });
 }
 
+//  Handles the search operation based on input type and value.
+function handleSearch(inputType, value) {
+  toggleLoadingSection(true);
+  const proxyurl = '';
+  const url = `https://ltvdataapi.devltv.co/api/v1/records?${inputType}=${value}`;
+
+  fetch(proxyurl + url)
+    .then(response => response.text())
+    .then(contents => {
+      localStorage.setItem('userObject', contents);
+      showResultsSection();
+    })
+    .catch(console.error)
+    .finally(() => {
+      toggleLoadingSection(false);
+    });
+}
+
+/**
+ * Initializes the search button functionality.
+ */
 function initSearchButton() {
   document.querySelectorAll('.js-btn-search').forEach(function (button) {
     button.addEventListener('click', function (e) {
       e.preventDefault();
-      localStorage.clear(); // Clears storage for next request
+      localStorage.clear(); // Clear storage for next request
       const selector = e.currentTarget.dataset.form;
       const emailInput = document.getElementById(`email-${selector}-input`);
       const phoneInput = document.getElementById(`phone-${selector}-input`);
-      const email = emailInput ? emailInput.value.toLowerCase() : '';
-      const phone = phoneInput ? phoneInput.value : '';
 
-      let isValid = false;
+      const email = emailInput ? emailInput.value.trim().toLowerCase() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
 
       // Clear previous errors
       clearError(emailInput);
       clearError(phoneInput);
 
+      let isValid = false;
+
       // Check for empty inputs
-      if (!email && !phone) {
+      if (!email) {
         showError(emailInput);
         showError(phoneInput);
       } else if (email && validateEmail(email)) {
@@ -138,32 +138,10 @@ function initSearchButton() {
       }
 
       if (isValid) {
-        // Show loading section and hide main content
-        toggleLoadingSection(true);
-
-        const proxyurl = '';
-        const url = email
-          ? 'https://ltvdataapi.devltv.co/api/v1/records?email=' + email
-          : 'https://ltvdataapi.devltv.co/api/v1/records?phone=' + phone;
-
-        fetch(proxyurl + url)
-          .then(function (response) {
-            return response.text();
-          })
-          .then(function (contents) {
-            localStorage.setItem('userObject', contents);
-            showResultsSection();
-          })
-          .catch(function (e) {
-            console.log(e);
-          }).finally(function () {
-            // Hide loading section and show main content
-            toggleLoadingSection(false);
-          });
+        handleSearch(email ? 'email' : 'phone', email || phone);
       } else {
-        // Show error for email
+        // Show error for empty or invalid inputs
         if (email) showError(emailInput);
-        // Show error for phone
         if (phone) showError(phoneInput);
       }
     });
