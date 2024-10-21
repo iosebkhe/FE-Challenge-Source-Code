@@ -19,10 +19,10 @@ module.exports = {
           }
         }
       },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
+      // {
+      //   test: /\.(sa|sc|c)ss$/,
+      //   use: ['style-loader', 'css-loader', 'sass-loader'],
+      // },
       {
         test: /\.html$/,
         loader: 'html-loader',
